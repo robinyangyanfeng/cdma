@@ -1,0 +1,262 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/new_proj/cdma/modelsim
+vapb_ms_model
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 bF:Od;ZFM`>_Tm2i`0I2j3
+I3:ZLf_I_=3_4?aVQhLI]@1
+R0
+Z2 w1610595522
+8../pattern/apb_ms_model.v
+F../pattern/apb_ms_model.v
+Z3 L0 29
+Z4 OL;L;10.4c;61
+Z5 !s108 1610674287.000000
+Z6 !s107 ../pattern//cdma_sim_def.v|../rtl/cdma_buf.v|../rtl/dmaw_2_axi.v|../rtl/dmar_2_axi.v|../rtl/strict_round_arbt.v|../rtl/wcmd_gen.v|../rtl/rcmd_gen.v|../rtl/cmd_fetch.v|../rtl/cdma_cfg.v|../rtl/cdma.v|../pattern/axi32_slave_model.v|../pattern/apb_ms_model.v|../pattern/tb.v|
+Z7 !s90 -reportprogress|300|-O0|-vlog01compat|-f|flist.f|
+!s101 -O0
+!i113 0
+Z8 o-O0 -vlog01compat -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+Z9 !s92 -O0 -vlog01compat +incdir+../pattern/ -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+vaxi32_slave_model
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 <4>UQQl1SO?9ao4]83RMQ1
+I=g_`Cf7SICS0^R=bOzSlb3
+R0
+R2
+8../pattern/axi32_slave_model.v
+F../pattern/axi32_slave_model.v
+R3
+R4
+R5
+R6
+R7
+!s101 -O0
+!i113 0
+R8
+R9
+vcdma
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 JPcV?fNCamHoHFO43a^SH2
+Ii29F71FW5BA80?a;;BlFX2
+R0
+R2
+8../rtl/cdma.v
+F../rtl/cdma.v
+L0 25
+R4
+R5
+R6
+R7
+!s101 -O0
+!i113 0
+R8
+R9
+vcdma_buf
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 ng8oFR0^0DjbMVUQ3>:l32
+IJm7VjnN]_1dI3N9_?ifRZ3
+R0
+R2
+8../rtl/cdma_buf.v
+F../rtl/cdma_buf.v
+Z10 L0 26
+R4
+R5
+R6
+R7
+!s101 -O0
+!i113 0
+R8
+R9
+vcdma_cfg
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 IB3Lgef5UJY@dff_ZLXiP0
+I3XkE`>?0`Mb=<R1>9`d>71
+R0
+R2
+8../rtl/cdma_cfg.v
+F../rtl/cdma_cfg.v
+Z11 L0 27
+R4
+R5
+R6
+R7
+!s101 -O0
+!i113 0
+R8
+R9
+vcmd_fetch
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 L>jTgg:daiUEma4NI<ILQ3
+IDKADOKCQij6R@mz53]AC_1
+R0
+R2
+8../rtl/cmd_fetch.v
+F../rtl/cmd_fetch.v
+R10
+R4
+R5
+R6
+R7
+!s101 -O0
+!i113 0
+R8
+R9
+vdmar_2_axi
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 k<nD9W:H9elic?lVOhmO<1
+ISiNLL7]:2R_M<A36N74XK0
+R0
+R2
+8../rtl/dmar_2_axi.v
+F../rtl/dmar_2_axi.v
+R3
+R4
+R5
+R6
+R7
+!s101 -O0
+!i113 0
+R8
+R9
+vdmaw_2_axi
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 bia7<<e]7FZjfg4A]`dmZ1
+IMH9hZ:><lE>X;Z=1zY1O[2
+R0
+R2
+8../rtl/dmaw_2_axi.v
+F../rtl/dmaw_2_axi.v
+R3
+R4
+R5
+R6
+R7
+!s101 -O0
+!i113 0
+R8
+R9
+vrcmd_gen
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 hW?eo];Fk8e;6?@;A^0?V2
+IL?>L4N<j8aTBiJP7R3IEc3
+R0
+R2
+8../rtl/rcmd_gen.v
+F../rtl/rcmd_gen.v
+Z12 L0 28
+R4
+R5
+R6
+R7
+!s101 -O0
+!i113 0
+R8
+R9
+vstrict_round_arbt
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 jG^ol36==>K=4Ed?DMj6`0
+IN6G;7]eZ@PJ>iDm?LfnUK3
+R0
+R2
+8../rtl/strict_round_arbt.v
+F../rtl/strict_round_arbt.v
+R11
+R4
+R5
+R6
+R7
+!s101 -O0
+!i113 0
+R8
+R9
+vtb
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 ;I<Fjfcnzl8?z;_gaHhDz2
+I^O=Z@PSomZnS@XVJnV`<:2
+R0
+R2
+8../pattern/tb.v
+F../pattern/tb.v
+L0 31
+R4
+R5
+R6
+R7
+!s101 -O0
+!i113 0
+R8
+R9
+vwcmd_gen
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 38J9`QoO_:Km7Y1o`ieB`0
+I[U^I=H`=ElD]A:UPWkWLS3
+R0
+R2
+8../rtl/wcmd_gen.v
+F../rtl/wcmd_gen.v
+R12
+R4
+R5
+R6
+R7
+!s101 -O0
+!i113 0
+R8
+R9

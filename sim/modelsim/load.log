@@ -1,0 +1,185 @@
+# vsim -c "+nowarnTSCALE" -L ./work -novopt -l load.log tb 
+# Start time: 09:31:29 on Jan 15,2021
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/new_proj/cdma/modelsim/work.tb
+# Loading work.tb
+# Refreshing E:/new_proj/cdma/modelsim/work.apb_ms_model
+# Loading work.apb_ms_model
+# Refreshing E:/new_proj/cdma/modelsim/work.axi32_slave_model
+# Loading work.axi32_slave_model
+# Refreshing E:/new_proj/cdma/modelsim/work.cdma
+# Loading work.cdma
+# Refreshing E:/new_proj/cdma/modelsim/work.cdma_cfg
+# Loading work.cdma_cfg
+# Refreshing E:/new_proj/cdma/modelsim/work.cmd_fetch
+# Loading work.cmd_fetch
+# Refreshing E:/new_proj/cdma/modelsim/work.rcmd_gen
+# Loading work.rcmd_gen
+# Refreshing E:/new_proj/cdma/modelsim/work.wcmd_gen
+# Loading work.wcmd_gen
+# Refreshing E:/new_proj/cdma/modelsim/work.dmar_2_axi
+# Loading work.dmar_2_axi
+# Refreshing E:/new_proj/cdma/modelsim/work.strict_round_arbt
+# Loading work.strict_round_arbt
+# Refreshing E:/new_proj/cdma/modelsim/work.dmaw_2_axi
+# Loading work.dmaw_2_axi
+# Refreshing E:/new_proj/cdma/modelsim/work.cdma_buf
+# Loading work.cdma_buf
+# ** Warning: (vsim-PLI-3003) ../pattern/tb.v(46): [TOFD] - System task or function '$fsdbDumpfile' is not defined.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: ../pattern/tb.v
+# ** Warning: (vsim-PLI-3003) ../pattern/tb.v(47): [TOFD] - System task or function '$fsdbDumpvars' is not defined.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: ../pattern/tb.v
+# hexadecimal
+# ** Error (suppressible): (vsim-12023) ../pattern/tb.v(46): Cannot execute undefined system task/function '$fsdbDumpfile'
+# 
+# ** Error (suppressible): (vsim-12023) ../pattern/tb.v(47): Cannot execute undefined system task/function '$fsdbDumpvars'
+# 
+#                  295	Info: DMA test for source begin addr offet: 0ff0.
+#               106536	Info: DMA test for source begin addr offet: 0ff1.
+#               218386	Info: DMA test for source begin addr offet: 0ff2.
+#               326536	Info: DMA test for source begin addr offet: 0ff3.
+#               434246	Info: DMA test for source begin addr offet: 0ff4.
+#               545176	Info: DMA test for source begin addr offet: 0ff5.
+#               649406	Info: DMA test for source begin addr offet: 0ff6.
+#               755766	Info: DMA test for source begin addr offet: 0ff7.
+#               863316	Info: DMA test for source begin addr offet: 0ff8.
+#               965766	Info: DMA test for source begin addr offet: 0ff9.
+#              1070766	Info: DMA test for source begin addr offet: 0ffa.
+#              1178806	Info: DMA test for source begin addr offet: 0ffb.
+#              1290906	Info: DMA test for source begin addr offet: 0ffc.
+#              1393046	Info: DMA test for source begin addr offet: 0ffd.
+#              1510506	Info: DMA test for source begin addr offet: 0ffe.
+#              1618486	Info: DMA test for source begin addr offet: 0fff.
+#              1723166	Info: DMA test for source begin addr offet: 1000.
+#              1832136	Info: DMA test for source begin addr offet: 1001.
+#              1942156	Info: DMA test for source begin addr offet: 1002.
+add wave -position insertpoint  \
+sim:/tb/u_apb_ms_model/xsize \
+sim:/tb/u_apb_ms_model/ysize
+#              2043336	Info: DMA test for source begin addr offet: 1003.
+add wave -position insertpoint  \
+sim:/tb/u_apb_ms_model/clk \
+sim:/tb/u_apb_ms_model/rstn \
+sim:/tb/u_apb_ms_model/psel \
+sim:/tb/u_apb_ms_model/penable \
+sim:/tb/u_apb_ms_model/paddr \
+sim:/tb/u_apb_ms_model/pwrite \
+sim:/tb/u_apb_ms_model/pwdata \
+sim:/tb/u_apb_ms_model/pready \
+sim:/tb/u_apb_ms_model/prdata
+add wave -position insertpoint  \
+sim:/tb/u_apb_ms_model/intr
+#              2157256	Info: DMA test for source begin addr offet: 1004.
+#              2261696	Info: DMA test for source begin addr offet: 1005.
+add wave -position insertpoint  \
+sim:/tb/u_cdma/clk \
+sim:/tb/u_cdma/rstn
+#              2373846	Info: DMA test for source begin addr offet: 1006.
+add wave -position insertpoint  \
+sim:/tb/u_cdma/arid \
+sim:/tb/u_cdma/araddr \
+sim:/tb/u_cdma/arlen \
+sim:/tb/u_cdma/arsize \
+sim:/tb/u_cdma/arvalid \
+sim:/tb/u_cdma/arready
+#              2483576	Info: DMA test for source begin addr offet: 1007.
+#              2587616	Info: DMA test for source begin addr offet: 1008.
+add wave -position insertpoint  \
+sim:/tb/u_cdma/rvalid \
+sim:/tb/u_cdma/rready
+add wave -position insertpoint  \
+sim:/tb/u_cdma/rid \
+sim:/tb/u_cdma/rdata \
+sim:/tb/u_cdma/rlast
+add wave -position insertpoint  \
+sim:/tb/u_cdma/awvalid \
+sim:/tb/u_cdma/awready
+#              2688536	Info: DMA test for source begin addr offet: 1009.
+add wave -position insertpoint  \
+sim:/tb/u_cdma/awaddr \
+sim:/tb/u_cdma/awlen \
+sim:/tb/u_cdma/awsize
+add wave -position insertpoint  \
+sim:/tb/u_cdma/arsize
+#              2797166	Info: DMA test for source begin addr offet: 100a.
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf E:/new_proj/cdma/modelsim/wave.do
+add wave -position insertpoint  \
+sim:/tb/u_cdma/wvalid \
+sim:/tb/u_cdma/wready
+#              2906816	Info: DMA test for source begin addr offet: 100b.
+add wave -position insertpoint  \
+sim:/tb/u_cdma/wlast
+add wave -position insertpoint  \
+sim:/tb/u_cdma/wdata \
+sim:/tb/u_cdma/wstrb
+#              3016186	Info: DMA test for source begin addr offet: 100c.
+#              3130166	Info: DMA test for source begin addr offet: 100d.
+add wave -position insertpoint  \
+sim:/tb/u_cdma/u_cdma_cfg/cfg_sar \
+sim:/tb/u_cdma/u_cdma_cfg/cfg_dar \
+sim:/tb/u_cdma/u_cdma_cfg/cfg_trans_xsize \
+sim:/tb/u_cdma/u_cdma_cfg/cfg_trans_ysize \
+sim:/tb/u_cdma/u_cdma_cfg/cfg_sa_ystep \
+sim:/tb/u_cdma/u_cdma_cfg/cfg_da_ystep \
+sim:/tb/u_cdma/u_cdma_cfg/cfg_llr \
+sim:/tb/u_cdma/u_cdma_cfg/cfg_dma_halt \
+sim:/tb/u_cdma/u_cdma_cfg/buf_err
+#              3240476	Info: DMA test for source begin addr offet: 100e.
+#              3348616	Info: DMA test for source begin addr offet: 100f.
+add wave -position insertpoint  \
+sim:/tb/u_cdma/u_cdma_cfg/ll_req \
+sim:/tb/u_cdma/u_cdma_cfg/ll_addr \
+sim:/tb/u_cdma/u_cdma_cfg/ll_ack \
+sim:/tb/u_cdma/u_cdma_cfg/ll_dvld \
+sim:/tb/u_cdma/u_cdma_cfg/ll_rdata \
+sim:/tb/u_cdma/u_cdma_cfg/ll_dcnt
+add wave -position insertpoint  \
+sim:/tb/u_cdma/u_cdma_cfg/intr
+#              3454176	Info: DMA test for source begin addr offet: 1010.
+#              3564295	Info:    0st DMA test for multiple 2D DMA cmd linked list, total 2D DMA cmd number is:  3.
+#              5693036	Info:    1st DMA test for multiple 2D DMA cmd linked list, total 2D DMA cmd number is:  2.
+#             10545766	Info:    2st DMA test for multiple 2D DMA cmd linked list, total 2D DMA cmd number is:  3.
+add wave -position insertpoint  \
+sim:/tb/u_cdma/u_cdma_buf/clk \
+sim:/tb/u_cdma/u_cdma_buf/buf_wr \
+sim:/tb/u_cdma/u_cdma_buf/buf_wdata \
+sim:/tb/u_cdma/u_cdma_buf/buf_rd \
+sim:/tb/u_cdma/u_cdma_buf/buf_rdata
+#             16095306	Info:    3st DMA test for multiple 2D DMA cmd linked list, total 2D DMA cmd number is:  4.
+add wave -position insertpoint  \
+sim:/tb/u_cdma/u_cdma_buf/buf_empty \
+sim:/tb/u_cdma/u_cdma_buf/rptr \
+sim:/tb/u_cdma/u_cdma_buf/wptr
+add wave -position insertpoint  \
+sim:/tb/u_cdma/u_cdma_buf/buf_empty_word \
+sim:/tb/u_cdma/u_cdma_buf/buf_buf_word
+#             18861626	Info:    4st DMA test for multiple 2D DMA cmd linked list, total 2D DMA cmd number is:  3.
+#             22614636	Info:    5st DMA test for multiple 2D DMA cmd linked list, total 2D DMA cmd number is:  1.
+#             24496566	Info:    6st DMA test for multiple 2D DMA cmd linked list, total 2D DMA cmd number is:  1.
+#             25411536	Info:    7st DMA test for multiple 2D DMA cmd linked list, total 2D DMA cmd number is:  2.
+#             28411306	Info:    8st DMA test for multiple 2D DMA cmd linked list, total 2D DMA cmd number is:  3.
+#             30309286	Info:    9st DMA test for multiple 2D DMA cmd linked list, total 2D DMA cmd number is:  3.
+#             33953956	Info:   10st DMA test for multiple 2D DMA cmd linked list, total 2D DMA cmd number is:  1.
+#             33989746	Info:   11st DMA test for multiple 2D DMA cmd linked list, total 2D DMA cmd number is:  2.
+#             38231646	Info:   12st DMA test for multiple 2D DMA cmd linked list, total 2D DMA cmd number is:  2.
+#             41102586	Info:   13st DMA test for multiple 2D DMA cmd linked list, total 2D DMA cmd number is:  1.
+#             42298056	Info:   14st DMA test for multiple 2D DMA cmd linked list, total 2D DMA cmd number is:  2.
+#             43817446	Info:   15st DMA test for multiple 2D DMA cmd linked list, total 2D DMA cmd number is:  3.
+#             47107076	Info:   16st DMA test for multiple 2D DMA cmd linked list, total 2D DMA cmd number is:  4.
+#             52431226	Info:   17st DMA test for multiple 2D DMA cmd linked list, total 2D DMA cmd number is:  1.
+#             53111736	Info:   18st DMA test for multiple 2D DMA cmd linked list, total 2D DMA cmd number is:  1.
+#             56624906	Info:   19st DMA test for multiple 2D DMA cmd linked list, total 2D DMA cmd number is:  3.
+# OK: sim pass.
+# ** Note: $finish    : ../pattern/apb_ms_model.v(469)
+#    Time: 58320396 ns  Iteration: 0  Instance: /tb/u_apb_ms_model
+# 1
+# Break in Module apb_ms_model at ../pattern/apb_ms_model.v line 469
+add wave -position 1  -autoscale 1 -format Literal -height 17
+# Missing signal name or pattern.
+add wave -position 1  -autoscale 1 -format Literal -height 17
+# Missing signal name or pattern.
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf E:/new_proj/cdma/modelsim/wave.do
+quit -sim
+# End time: 09:56:47 on Jan 15,2021, Elapsed time: 0:25:18
+# Errors: 4, Warnings: 3
