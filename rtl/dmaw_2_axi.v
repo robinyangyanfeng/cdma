@@ -277,4 +277,83 @@ end	else if((sta	==	s_cmd1)	&&	send_bt_cmd)	begin
 end
 
 //--- 2: change burst cmd to AXI inf burst cmd ---//
-always	
+
+reg			[1:0]		axi_sta			;
+wire						axi_wr			;		//0: read AXI trans; 1: write AXI trans
+reg							axi_w_ch		;		//read channel
+reg			[31:0]	axi_addr		;
+wire		[10:0]	axi_len_w		;		//cnt from 0
+reg			[3:0]		axi_len			;		//must within 0~15, cnt from 0
+wire						axi_d_send	;
+wire						axi_cmd_go	;
+
+wire		[5:0]		bnum_sub_thres;	//buffer 32b number sub threshold
+wire		[5:0]		bnum_sub_len;		//buffer 32b number sub cur AXI burst length
+
+
+parameter		[1:0]		axi_idle = 'd0, axi_cmd	=	'd1, axi_wd = 'd2;
+
+assign	axi_wr			=	1'b1;
+assign	bt_cmd_ack	=	(axi_sta	==	axi_idle)?	1'b1	:	1'b0;
+assign	axi_len_w		=	nxt_bt_addr[12:2]	-	{1'b0, cur_addr[11:2]};
+assign	axi_d_send	=	wvalid	&	wready;
+
+always	@(posedge	clk or negedge rstn)
+if(~rstn)	begin
+		axi_sta			<=	axi_idle;
+		axi_len			<=	'd0;
+		axi_addr		<=	'd0;
+		axi_w_ch		<=	'd0;
+end else begin
+		case(axi_sta)
+		axi_idle:
+				if(bt_cmd_req) begin
+						axi_sta			<=	axi_cmd;
+						axi_len			<=	axi_len_w[3:0];
+						axi_addr		<=	{cur_addr[31:2], 2'h0};
+						axi_w_ch		<=	'd0;
+				end
+				
+		axi_cmd:
+				if(awvalid && awready) begin
+						axi_sta			<=	axi_wd;
+				end
+				
+		axi_wd:
+				if(axi_d_send) begin
+						if(axi_len	==	'd0)
+								axi_sta			<=	axi_idle;
+						else begin
+								axi_sta			<=	axi_wd;
+								axi_len			<=	axi_len	-	'd1;
+						end
+				end
+				
+		default:		axi_sta			<=	axi_idle;
+	endcase
+end
+
+
+assign	bnum_sub_thres	=	{1'b0,	buf_buf_word[4:0]}	-	WCMD_THRES;
+assign	bnum_sub_len		=	{1'b0,	buf_buf_word[4:0]}	-	{1'b0,	axi_len[3:0]};
+assign	axi_cmd_go			=	(!bnum_sub_thres[5])	|	(!bnum_sub_len[5]);
+assign	awvalid					=	(axi_sta	==	axi_cmd)	&	axi_wr	&	axi_cmd_go;
+
+assign	awid		=	{3'h0,	axi_w_ch};	//fixed at 0 now
+assign	awaddr	=	axi_addr;						//byte addr
+assign	awlen		=	axi_len	;
+assign	awsize	=	3'h2		;
+assign	awburst	=	2'b01		;
+assign	awlock	=	2'b00		;
+assign	awcache	=	{2'b00,	cfg_cf,	cfg_bf};
+assign	awprot	=	3'b010	;
+
+assign	wid			=	{3'h0,	axi_w_ch};
+assign	wdata		=	dma_wdata;
+assign	wstrb		=	dma_wbe;
+assign	wlast		=	(axi_len	==	'd0)?	1'b1	:	1'b0;
+assign	dma_w_dack	=	wready;
+
+assign	bready	=	1'b1;
+
+endmodule
